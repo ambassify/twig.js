@@ -1442,6 +1442,9 @@ module.exports = function (Twig) {
      */
 
     Twig.Markup = function (content, strategy) {
+        if (typeof content === 'undefined')
+            return '';
+
         if (typeof content !== 'string' || content.length === 0) {
             return content;
         }
